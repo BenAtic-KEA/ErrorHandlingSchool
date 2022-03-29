@@ -27,19 +27,27 @@ class MyException extends Exception {
 public class ExceptionDemoRunner implements CommandLineRunner {
 
     public void checkedExceptionDemo() throws FileNotFoundException {
+    File file = new File("i dont exist");
+    Scanner scanner = new Scanner (file);
+
 
     }
 
     public void runtimeExceptionDemo(){
+    String name = "Peter";
 
+    name = null;
+
+        System.out.println(name.length());
     }
 
     public void ownException() throws MyException {
 
+        throw new MyException("Error ! Error!");
     }
 
     public void errorDemo() {
-
+        errorDemo();
     }
 
     @Override
